@@ -3,7 +3,10 @@ package com.daniel.scloud.demo.ls01mssms.web.controller;
 
 import com.daniel.scloud.demo.ls01mssms.dao.UserRepository;
 import com.daniel.scloud.demo.ls01mssms.model.entity.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,20 +31,26 @@ import java.util.List;
 @RequestMapping("/user")
 public class UserController {
 
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
+
+    @Value("${server.port}")
+    private String serverPort;
+
     @Autowired
     private UserRepository userRepository;
 
     @GetMapping("")
     public List<User> findAll() {
+        logger.info("findAll(logged by DanielDai)<>【serverPort:{}】",serverPort);
         List<User> users =userRepository.findAll();
 
         return users;
     }
 
-/*    @GetMapping("/{id}")
+    @GetMapping("/{id}")
     public User getById(@PathVariable Long id) {
+        logger.info("findAll(logged by DanielDai)<>【serverPort:{}】",serverPort);
         User user = userRepository.findOne(id);
-
         return user;
-    }*/
+    }
 }

@@ -5,7 +5,7 @@ logging:
     com.daniel.scloud.demo.ls01mssms: debug
 
 server:
-  port: 9000
+  port: 9001
 eureka:
   client:
     register-with-eureka: true #是否注册到Eureka中
