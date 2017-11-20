@@ -1,0 +1,16 @@
+logging:
+  level:
+    com.daniel.scloud.demo.ls01mswebsite: debug
+server:
+  port: 9010
+eureka:
+  client:
+    register-with-eureka: true # 是否注册的eureka
+    fetch-registry: true #是否拉取配置信息
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/ # 这里配置的是Eureka服务中心的地址
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+    lease-renewal-interval-in-seconds: 30 #心跳检测间隔
+

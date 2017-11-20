@@ -1,0 +1,7 @@
+
+info:
+  name: ls01-ms-website
+  author: Daniel·Dai
+spring:
+  profiles:
+    active: dev
