@@ -2,6 +2,7 @@ package com.daniel.scloud.demo.ls01mswebsite.web.controller;
 
 import com.daniel.scloud.demo.ls01mswebsite.config.MsProperties;
 import com.daniel.scloud.demo.ls01mswebsite.model.entity.User;
+import com.netflix.appinfo.InstanceInfo;
 import com.netflix.discovery.EurekaClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
@@ -23,17 +24,19 @@ public class UserController {
     private DiscoveryClient discoveryClient;
 
     @Autowired
-    private EurekaDiscoveryClient eurekaDiscoveryClient;
+    private EurekaClient eurekaClient;
 
     @Autowired
     private MsProperties ms;
 
-/*    @GetMapping("")
+    @GetMapping("")
     public List<User> findAll() {
-        List<User> users =userRepository.findAll();
+        InstanceInfo instance = eurekaClient.getNextServerFromEureka(ms.getSms(),false);
+        String url = instance.getHomePageUrl()+"/user";
+        List<User> users = new RestTemplate().getForObject(url,List.class);
 
         return users;
-    }*/
+    }
 
     @GetMapping("/{id}")
     public User getById(@PathVariable Long id) {
@@ -47,5 +50,7 @@ public class UserController {
 
         return user;
     }
+
+
 
 }
