@@ -1,0 +1,7 @@
+
+info:
+  name: ls01-discovery-eureka
+  author: Daniel·Dai
+spring:
+  profiles:
+    active: dev
