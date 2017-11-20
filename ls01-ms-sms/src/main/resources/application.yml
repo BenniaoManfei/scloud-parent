@@ -1,0 +1,18 @@
+
+
+info:
+  name: ls01-ms-sms
+  author: Daniel·Dai
+spring:
+  jpa:
+    generate-ddl: false # 不生成DDL语句
+    show-sql: true
+    hibernate:
+      ddl-auto: none # 自动生成DDL，这里不指定
+  datasource:
+    platform: h2 # 使用h2内存数据库
+    schema: classpath:/data/schema.sql # 创建时数据库的脚本
+    data: classpath:/data/data.sql # 指定插入数据的脚本位置
+  profiles:
+    active: dev
+

@@ -1,0 +1,9 @@
+
+
+logging:
+  level:
+    com.daniel.scloud.demo.ls01mssms: debug
+
+server:
+  port: 9000
+
