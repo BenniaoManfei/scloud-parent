@@ -1,0 +1,20 @@
+logging:
+  level:
+    com.daniel.scloud.demo.ls01discoveryeureka: debug
+server:
+  port: 8761
+eureka:
+  client:
+    register-with-eureka: true # 是否注册到注册中心
+    fetch-registry: true # 是否拉取信息
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/,http://127.0.0.1:8762/eureka/,http://127.0.0.1:8763/eureka/
+  server:
+    wait-time-in-ms-when-sync-empty: 0
+    enable-self-preservation: true # 是否开启自我保护机制，false关闭后，无论如何不剔除心跳检测异常服务
+    peer-eureka-nodes-update-interval-ms: 6000 #updatePeerEurekaNodes执行间隔(集群刷新间隔)
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+
+
