@@ -1,0 +1,3 @@
+spring:
+  application:
+    name: ls02-ms-website
