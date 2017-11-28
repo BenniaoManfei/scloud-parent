@@ -1,0 +1,17 @@
+
+
+info:
+  name: ls02-ms-sms
+  author: Daniel·Dai
+spring:
+  jpa:
+    show-sql: true
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+  datasource:
+    platform: h2
+    schema: classpath:/data/schema.sql # 创建时数据库的脚本
+    data: classpath:/data/data.sql # 指定插入数据的脚本位置
+  profiles:
+      active: dev
