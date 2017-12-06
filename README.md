@@ -10,3 +10,10 @@
 
 
 ----
+
+#### 3. Ribbon ####
+
+1. 使用RestTemplate和Ribbon完成客户端负载调用
+
+
+----

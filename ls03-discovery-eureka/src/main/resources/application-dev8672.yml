@@ -1,0 +1,19 @@
+
+
+logging:
+  level:
+    com.daniel.scloud.demo: debug
+server:
+  port: 8672
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8671/eureka/,http://127.0.0.1:8672/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+    lease-renewal-interval-in-seconds: 30 #心跳检测间隔
+
+
