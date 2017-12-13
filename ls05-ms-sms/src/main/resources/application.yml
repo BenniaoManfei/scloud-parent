@@ -1,0 +1,26 @@
+
+info:
+  author: DanielDai
+  name: ls05-ms-sms
+spring:
+  profiles:
+    active: dev
+  jpa:
+    show-sql: true
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+  datasource:
+    platform: h2
+    schema: classpath:/data/schema.sql
+    data: classpath:/data/data.sql
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8671/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+    lease-renewal-interval-in-seconds: 30 #心跳检测间隔

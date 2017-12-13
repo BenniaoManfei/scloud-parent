@@ -25,3 +25,12 @@
 
 
 ----
+
+#### 4. Hystrix ####
+
+1. 断路器
+2. Feign+Hystrix
+3. RestTemplate+Rabbin+Hystrix(缺) 
+
+
+----
