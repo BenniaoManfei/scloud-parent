@@ -1,0 +1,6 @@
+info:
+  author: DanielDai
+  name: ls06-ms-discovery-eureka
+spring:
+  profiles:
+    active: dev
