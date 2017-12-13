@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: ls02-config-server
+  profiles:
+    active: dev,git
+  cloud:
+    config:
+      server:
+        git:
+          uri: http://centos04:18080/root/ls02-config-server-repo.git
+          search-paths: /
+          username: root
+          password: 12345678
+        encrypt:
+          enabled: true
+

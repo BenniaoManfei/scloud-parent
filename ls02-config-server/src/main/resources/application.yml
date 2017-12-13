@@ -1,0 +1,23 @@
+
+
+info:
+  name: ls02-config-server
+  author: Daniel·Dai
+management:
+  security:
+    enabled: false
+security:
+  ignored: /monitor #这个内部接口不能配置校验
+  user:
+    name: admin
+    password: 12345678
+server:
+  port: 7080
+spring:
+  rabbitmq:
+    host: 192.168.150.104
+    username: guest
+    password: guest
+  profiles:
+   active: dev
+

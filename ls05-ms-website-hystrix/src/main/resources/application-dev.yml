@@ -1,0 +1,8 @@
+logging:
+  level:
+    com.daniel.scloud.demo: debug
+server:
+  port: 7011
+ms:
+  sms: ls05-ms-sms
+  websiteHystrix: ls05-ms-website-hystrix

@@ -1,0 +1,3 @@
+spring:
+  application:
+    name: ls05-ms-website-hystrix

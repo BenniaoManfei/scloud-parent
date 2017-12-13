@@ -1,0 +1,8 @@
+logging:
+  level:
+    com.daniel.scloud.demo: debug
+server:
+  port: 7011
+ms:
+  sms: ls04-ms-sms
+  websiteFeign: ls04-ms-website-feign

@@ -1,0 +1,8 @@
+info:
+  author: Daniel·Dai
+  info: ls03-discovery-eureka
+
+spring:
+  profiles:
+    active: dev
+
