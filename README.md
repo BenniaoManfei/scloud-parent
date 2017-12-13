@@ -26,7 +26,7 @@
 
 ----
 
-#### 4. Hystrix ####
+#### 5. Hystrix ####
 
 1. 断路器
 2. Feign+Hystrix
