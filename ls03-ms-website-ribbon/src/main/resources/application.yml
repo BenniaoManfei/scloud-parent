@@ -1,6 +1,6 @@
 info:
   author: DanielDai
-  name: ls03-ms-sms
+  name: ls03-ms-website-ribbon
 
 spring:
   profiles:
@@ -14,4 +14,4 @@ eureka:
   instance:
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
-    lease-renewal-interval-in-seconds: 30 #ÐÄÌø¼ì²â¼ä¸ô
+    lease-renewal-interval-in-seconds: 30
