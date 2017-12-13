@@ -3,14 +3,14 @@ info:
   name: ls03-ms-sms
 spring:
   jpa:
-    generate-ddl: false # ²»Éú³ÉDDLÓï¾ä
+    generate-ddl: false # ä¸ç”ŸæˆDDLè¯­å¥
     show-sql: true
     hibernate:
-      ddl-auto: none # ×Ô¶¯Éú³ÉDDL£¬ÕâÀï²»Ö¸¶¨
+      ddl-auto: none # è‡ªåŠ¨ç”ŸæˆDDLï¼Œè¿™é‡Œä¸æŒ‡å®š
   datasource:
-    platform: h2 # Ê¹ÓÃh2ÄÚ´æÊı¾İ¿â
-    schema: classpath:/data/schema.sql # ´´½¨Ê±Êı¾İ¿âµÄ½Å±¾
-    data: classpath:/data/data.sql # Ö¸¶¨²åÈëÊı¾İµÄ½Å±¾Î»ÖÃ
+    platform: h2 # ä½¿ç”¨h2å†…å­˜æ•°æ®åº“
+    schema: classpath:/data/schema.sql # åˆ›å»ºæ—¶æ•°æ®åº“çš„è„šæœ¬
+    data: classpath:/data/data.sql # æŒ‡å®šæ’å…¥æ•°æ®çš„è„šæœ¬ä½ç½®
   profiles:
     active: dev
 eureka:
@@ -22,6 +22,6 @@ eureka:
   instance:
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
-    lease-renewal-interval-in-seconds: 30 #ĞÄÌø¼ì²â¼ä¸ô
+    lease-renewal-interval-in-seconds: 30 #å¿ƒè·³æ£€æµ‹é—´éš”
 
 
