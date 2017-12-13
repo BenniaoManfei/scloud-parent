@@ -1,0 +1,21 @@
+info:
+  author: DanielDai
+  name: ls04-ms-website-feign
+
+
+spring:
+  profiles:
+    active: random # random配置使用了自定义的load策略，随机
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://127.0.0.1:8671/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+    lease-renewal-interval-in-seconds: 30
+logging:
+  level:
+    com.daniel.scloud.demo.ls04mswebsitefeign.service.ms: debug

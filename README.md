@@ -17,3 +17,11 @@
 
 
 ----
+
+#### 4. Feign+Ribbon ####
+
+1. 使用Feign完成服务之间的调用
+2. website-feign中增加了一个radom配置，更改Ribbon默认负载策略(轮询)为随机
+
+
+----
