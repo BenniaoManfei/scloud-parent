@@ -1,0 +1,29 @@
+info:
+  author: DanielDai
+  name: ls06-route-zuul
+
+ms:
+  sms: ls06-ms-sms
+  website: ls06-ms-website
+
+spring:
+  profiles:
+    active: dev # random配置使用了自定义的load策略，随机
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://127.0.0.1:8671/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+    lease-renewal-interval-in-seconds: 30
+zuul:
+  routes:
+    sms:
+      path: /sms/**
+      serviceId: ${ms.sms}
+    website:
+      path: /web/**
+      serviceId: ${ms.website}

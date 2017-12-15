@@ -1,0 +1,9 @@
+logging:
+  level:
+    com.daniel.scloud.demo: debug
+server:
+  port: 7011
+
+ls05-ms-sms:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
